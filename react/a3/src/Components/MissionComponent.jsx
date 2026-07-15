@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react"
+import axios from 'axios';
+
 
 let MissionComponent = () => {
 
     const [checkedValues, setCheckedValues] = useState([]);
-    let [missions, setMissions] = useState([]);
+    let [missions, setMissions] = useState([{id: '', value: '', label: ''}]);
 
     let clearMission = () => {
-        axios.put('/records/add/', checkedValues).then(response => {
-            refreshMissionList();
+        axios.put('/records/add/', checkedValues)
+        .then(response => {
             setCheckedValues([]);
-        })
+        });
     }
 
     const handleCheckBoxChange = (e) => {
@@ -24,18 +26,19 @@ let MissionComponent = () => {
     };
 
     useEffect(() => {
-        refreshMissionList();
-    }, []);
-
-    let refreshMissionList = () => {
-        fetch('/api/book/')
+        fetch('/api/Mission/')
             .then(response => response.json())
-            .then(json => setMissions(json));
-    }
+            .then(json => {
+                const data = json.map(item => ({
+                    id: item.id,
+                    value: item.mission,
+                    label: item.mission
+                }));
+                setMissions(json)
+            });
+    },[]);
 
-    let MISSION = [
-        {id: 1, value:"夜空を見上げる", label:"夜空を見上げる"}
-    ];
+   
 
     return (
         <div>
