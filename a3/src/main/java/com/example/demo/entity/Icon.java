@@ -19,6 +19,6 @@ public class Icon {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	
 	private Integer id;
-	private String icon_name;
-	private String icon_path;
+	private String iconName;
+	private String iconPath;
 }

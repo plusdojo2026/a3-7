@@ -31,5 +31,5 @@ public class Garalley {
 	@JsonIgnore
 	private User user;
 	//private Integer user_id;
-	private String image_path;
+	private String imagePath;
 }
