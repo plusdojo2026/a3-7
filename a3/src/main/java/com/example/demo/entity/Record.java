@@ -13,16 +13,16 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Table(name="keeps")
-public class Keep {
+@Table(name="records")
+public class Record {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	
 	private Integer id;
-	private Integer user_id;
+	private String mission;
+	private String progress;
+	private String feel;
+	private String found;
 	private String date;
-	private Integer suggest1_id;
-	private Integer suggest2_id;
-	private Integer suggest3_id;
-
+	private Integer user_id;
 }
