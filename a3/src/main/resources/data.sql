@@ -23,3 +23,8 @@ INSERT INTO activities (suggest) values ('自然の音を聴こう');
 INSERT INTO activities (suggest) values ('風を感じよう');
 INSERT INTO activities (suggest) values ('鳥や虫を探してみよう');
 INSERT INTO activities (suggest) values ('街路樹の近くを歩いてみよう');
+
+
+--一覧記録
+--INSERT INTO records (mission, progress, feel, found, date, user_id) values
+--('遠くの緑を見てみよう');
