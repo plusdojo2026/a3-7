@@ -1,9 +1,16 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 
 let MissionComponent = () => {
 
     const [checkedValues, setCheckedValues] = useState([]);
-    let [missions, setMissions] =useState([]);
+    let [missions, setMissions] = useState([]);
+
+    let clearMission = () => {
+        axios.put('/records/add/', checkedValues).then(response => {
+            refreshMissionList();
+            setCheckedValues([]);
+        })
+    }
 
     const handleCheckBoxChange = (e) => {
         const { value, checked} = e.target;
@@ -33,13 +40,14 @@ let MissionComponent = () => {
     return (
         <div>
             <h1>🌱今日のおすすめ</h1>
-            {MISSION.map((mission) => (
+            {missions.map((mission) => (
                 <label key={mission.id}>
                 <input type="checkbox" value={mission.value} checked={checkedValues.includes(mission.value)} onChange={handleCheckBoxChange}>
                 </input>
                 {mission.label}
                 </label>
             ))}
+            <button onClick={clearMission}>達成</button>
         </div>
     );
 }

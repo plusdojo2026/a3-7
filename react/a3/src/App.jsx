@@ -4,6 +4,7 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
 import MissionComponent from './Components/MissionComponent'
+import Home from './Home/Home'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -11,7 +12,7 @@ function App() {
   return (
     <>
       <section id="center">
-        <任意のタグ><任意のタグ/>
+        <Home></Home>
       </section>
     </>
   )
