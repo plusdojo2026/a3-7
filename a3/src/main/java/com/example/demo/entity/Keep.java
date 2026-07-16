@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -51,8 +52,13 @@ public class Keep {
 	//private Integer suggest3_id;
 	
 	//ミッション達成判定
+	@Column(name="suggest1Completed")
 	private Boolean suggest1Completed;
+	
+	@Column(name="suggest2Completed")
 	private Boolean suggest2Completed;
+	
+	@Column(name="suggest3Completed")
 	private Boolean suggest3Completed;
 
 }

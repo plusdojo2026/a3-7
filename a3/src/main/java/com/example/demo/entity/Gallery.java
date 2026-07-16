@@ -18,8 +18,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Table(name="garalleries")
-public class Garalley {
+@Table(name="galleries")
+public class Gallery {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
