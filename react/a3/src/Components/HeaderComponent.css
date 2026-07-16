@@ -1,0 +1,15 @@
+.header {
+  background-color: #ffffff;
+  padding: 20px;
+  text-align: center;
+  margin: 20px;
+  border-bottom: 3px solid black;
+}
+
+
+.header h2 {
+  color: black;
+  font-family: "Zen Maru Gothic", sans-serif;
+  margin: 0;
+  margin-bottom: 10px;
+}
