@@ -6,14 +6,10 @@ const Home = () => {
     let [nickname, setNickname] = useState("");
 
     useEffect(() => {
-        fetch('/user')
+        fetch('/api/home')
         .then(response => response.json())
-        .then((data) => setNickname(data.nickname));
+        .then((json) => setNickname(json.nickname));
     }, []);
-
-    let message = (name) => {
-        setNickname(name);
-    }
 
     return(
         <div>

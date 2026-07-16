@@ -6,9 +6,12 @@ import { useEffect, useState } from 'react'
 let PlantComponent = () => {
     let[tree, setTree] = useState(heroImg);
     let[flower, setFlower] = useState(viteLogo);
+    let[count, setCount] = useState("");
 
     useEffect(() => {
-        kindPlant(9);
+        fetch("/api/plant")
+        .then(response => response.json())
+        .then(json => setCount(json.count));
     }, []);
 
     let kindPlant = (count) =>{
