@@ -49,5 +49,10 @@ public class Keep {
 	@JoinColumn(name="suggest3_id")
 	private Activity suggest3;
 	//private Integer suggest3_id;
+	
+	//ミッション達成判定
+	private Boolean suggest1Completed;
+	private Boolean suggest2Completed;
+	private Boolean suggest3Completed;
 
 }
