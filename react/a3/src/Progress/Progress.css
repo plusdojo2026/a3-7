@@ -1,0 +1,9 @@
+.cal-box {
+    display: flex;
+    justify-content: center;
+}
+.cal {
+    border: 1px solid;
+    width: fit-content;
+    padding: 2px 5px;
+}
