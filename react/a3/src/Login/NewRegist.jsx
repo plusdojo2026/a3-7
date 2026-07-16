@@ -1,9 +1,11 @@
 import axios from 'axios';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const NewRegist = () => {
-    let [user, setUser] = useState({mail_address: '', password:''});
+    let [user, setUser] = useState({mailAddress: '', password:''});
     let [checkPass, setCheckPass] = useState({check_pass: ''});
+    const navigate = useNavigate();
 
     let inputUser = (e) => {
         setUser({...user, [e.target.name]:e.target.value})
@@ -15,7 +17,8 @@ const NewRegist = () => {
 
     let clickRegist = () => {
         if(user.password == checkPass.check_pass){
-            axios.post('/api/NewRegist', user);
+            axios.post('/api/newRegist', user);
+            navigate("/");
         }
         else{
             alert("パスワードが間違っています");
@@ -25,7 +28,7 @@ const NewRegist = () => {
     return(
         <div>
             ログインID<br></br>
-            <input type="text" name="mail_address" value={user.mail_address} onChange={inputUser}></input>
+            <input type="text" name="mailAddress" value={user.mail_address} onChange={inputUser}></input>
             <br></br>
             パスワード
             <br></br>

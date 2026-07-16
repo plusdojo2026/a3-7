@@ -6,4 +6,6 @@ import com.example.demo.entity.Keep;
 
 public interface KeepRepository extends JpaRepository<Keep, Integer> {
 
+	Keep findByUserId(Integer user_id);
+	
 }
