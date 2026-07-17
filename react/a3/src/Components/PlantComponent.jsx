@@ -11,7 +11,9 @@ let PlantComponent = () => {
     useEffect(() => {
         fetch("/api/plant")
         .then(response => response.json())
-        .then(json => setCount(json.count));
+        .then(json => {setCount(json)
+            console.log(json);
+    });
     }, []);
 
     let kindPlant = (count) =>{

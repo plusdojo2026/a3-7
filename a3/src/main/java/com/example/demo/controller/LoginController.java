@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.entity.User;
@@ -18,18 +18,22 @@ public class LoginController {
 	@Autowired
 	private UsersRepository repository;
 	
-	@PostMapping("/login")
-	public ResponseEntity<String> login(@RequestParam String mailAddress,
-						@RequestParam String password,
-						HttpSession session) {
+	@PostMapping("/api/login")
+	public ResponseEntity<String> login(@RequestBody User user, HttpSession session) {
 		
-		User user = repository.findBymailAddressAndPassword(mailAddress, password);
+		 User users = repository.findBymailAddressAndPassword(user.getMailAddress(), user.getPassword());
 		
-		if(user!=null) {
-			session.setAttribute("loginUserId", user.getId());
+		if(users!=null) {
+			session.setAttribute("loginUserId", users.getId());
 			return ResponseEntity.ok("success");
 		}
 		return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("failure");
 		
+	}
+	
+	@PostMapping("/api/newRegist")
+	private User add(@RequestBody User user) {
+		repository.save(user);
+		return user;
 	}
 }
