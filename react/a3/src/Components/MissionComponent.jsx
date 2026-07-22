@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import axios from 'axios';
+import styles from "./MissionComponent.module.css";
 
 
 let MissionComponent = () => {
@@ -124,23 +125,27 @@ let MissionComponent = () => {
    
 
     return (
-        <div>
-            <h1>🌱今日のおすすめ</h1>
-            {missions.length === 0 ? (
-                <p>今日のミッションをすべて達成しました</p>
-            ):(
-                <>
-                {missions.map((mission) => (
-                    <label key={mission.id}>
-                    <input type="checkbox" value={mission.value} checked={checkedValues.includes(mission.value)} onChange={handleCheckBoxChange}>
-                    </input>
-                    {mission.label}
-                    <br></br>
-                    </label>
-            ))}
-            <button onClick={clearMission}>達成</button>
-            </>
-        )}
+        <div className={styles.cloud}>
+            <div>
+                <p className={styles.heading}>今日のおすすめ</p>
+                {missions.length === 0 ? (
+                    <p>今日のミッションをすべて達成しました</p>
+                ):(
+                    <>
+                    {missions.map((mission) => (
+                        <div key={mission.id} className={styles.mission}>
+                            <label>
+                            <input type="checkbox" value={mission.value} checked={checkedValues.includes(mission.value)} onChange={handleCheckBoxChange}>
+                            </input>
+                            {mission.label}
+                            <br></br>
+                            </label>
+                        </div>
+                ))}
+                <button onClick={clearMission} className={styles.button}>達成</button>
+                </>
+            )}
+            </div>
         </div>
     );
 }
