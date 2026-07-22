@@ -1,5 +1,6 @@
 import styles from "./SettingComponent.module.css";
 
+
 const Setting = ({ nickname, setNickname, icon, setIcon}) => {
 
     const icons = ["🦍", "🦖", "🐬", "🐩", "🐈", "🐇"];
@@ -30,41 +31,50 @@ const Setting = ({ nickname, setNickname, icon, setIcon}) => {
     };
 
     return (
-        <section>
-            <h4>プロフィール</h4>
-
-            <p>ニックネーム</p>
-            <input type="text" 
-                value={nickname}
-                onChange={(e) => setNickname(e.target.value)}
-            />
+        <div>
             
-            <p>アイコン選択</p>
+            <section>
+                <h3>＜プロフィール＞</h3>
 
-            <div className={styles["icon-list"]}>
-                {icons.map((picture) => (
-                        <label key={picture} className={styles["icon-item"]}>
-                            <span className={styles["icon-picture"]}>{picture}</span>
+                <div className="nickname">
+                    <p>ニックネーム</p>
+                    <input type="text" 
+                        value={nickname}
+                        onChange={(e) => setNickname(e.target.value)}
+                    />
+                </div>
+                    
+                <div className="icon-box">
+                    <p>アイコン選択</p>
 
-                                <input
-                                type="radio"
-                                name="icon"
-                                value={picture}
-                                checked={icon === picture}
-                                onChange={ (e) => setIcon(e.target.value)}
-                            />
-                              
-                        </label>
-           ))}
-           </div>
+                    <div className={styles["icon-list"]}>
+                        {icons.map((picture) => (
+                                <label key={picture} className={styles["icon-item"]}>
+                                    <span className={styles["icon-picture"]}>{picture}</span>
 
-           <br />
+                                        <input
+                                        type="radio"
+                                        name="icon"
+                                        value={picture}
+                                        checked={icon === picture}
+                                        onChange={ (e) => setIcon(e.target.value)}
+                                    />
+                                    
+                                </label>
+                    ))}
+                    </div>
+                </div>
 
-           <button onClick={handleComplete}>
-            完了
-           </button>
+                <br />
 
-        </section>
+                <button onClick={handleComplete}>
+                    完了
+                </button>
+
+                </section>
+            
+        </div>
+
     );
 };
 

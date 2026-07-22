@@ -1,9 +1,96 @@
-.cal-box {
-    display: flex;
-    justify-content: center;
+@charset "UTF-8";
+
+/*背景色*/
+body {
+    background-color: #fffaf0;
 }
+
+/*カレンダー*/
 .cal {
-    border: 1px solid;
-    width: fit-content;
-    padding: 2px 5px;
+    margin-top: 22%;
+    font-size: 20px;
+}
+/*.cal-text {
+    border-bottom: dotted burlywood;
+}*/
+
+/*今日頑張ったこと*/
+.effort-box {
+    margin: 20px 20px;
+    width: auto;
+    height: 110px;
+    background-color: white;
+	border: solid 1px rgb(191, 191, 191);
+    box-shadow: 2px 2px 3px rgb(153, 153, 153);
+	border-radius: 20px;
+	/*gap: 10px;*/
+}
+.today-effort, .today-feeling, .get-happy {
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+.eff-text {
+    width: 90%;
+    height: 55px;
+    margin-top: 8px;
+    border-color: rgb(176, 176, 176);
+    border-radius: 10px;
+}
+
+/*今日の気分*/
+.feeling-box {
+    margin: 30px 20px;
+    width: auto;
+    height: 90px;
+    background-color: white;
+	border: solid 1px rgb(191, 191, 191);
+    box-shadow: 2px 2px 3px rgb(153, 153, 153);
+	border-radius: 20px;
+}
+
+.feel-box {
+    margin-top: 15px;
+}
+.feel-item {
+    font-size: 30px;
+    margin-right: 5px;
+}
+
+/*見つけた癒し・幸せ*/
+.happy-box {
+    margin: 30px 20px;
+    width: auto;
+    height: 95px;
+    background-color: white;
+	border: solid 1px rgb(191, 191, 191);
+    box-shadow: 2px 2px 3px rgb(153, 153, 153);
+	border-radius: 20px;
+}
+.hap-text {
+    width: 90%;
+    height: 40px;
+    margin-top: 8px;
+    border-color: rgb(176, 176, 176);
+    border-radius: 10px;
+}
+
+/*報告・リセットボタン*/
+.btns-box {
+    display: flex;  /*横並び*/
+    width: 100%;
+}
+.btns {
+    margin-top: 0px;
+    flex: 1;
+}
+.btns button {
+    width: 55%;
+    color: #00331c;
+    background-color: #d9f2d0;
+    padding: 7px;
+    border: none;
+    border-radius: 30px;
 }

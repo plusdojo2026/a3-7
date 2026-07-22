@@ -3,6 +3,8 @@ import Header from "../Components/HeaderComponent";
 import Setting from '../Components/SettingComponent';
 import Gallery from '../Components/GalleryComponent';
 import { useState } from 'react';
+import HeaderComponent from "../Components/HeaderComponent";
+import FooterComponent from "../Components/FooterComponent";
 
 const MyPage = () => {
 
@@ -13,9 +15,9 @@ const MyPage = () => {
 
     return (
         <>
-           
+            <HeaderComponent /> 
             <main>
-            <h2>マイページ</h2>
+            
 
             <Setting
                 nickname={nickname}
@@ -26,6 +28,7 @@ const MyPage = () => {
 
             <Gallery />
             </main>
+            <FooterComponent />
         </>
     );
 };

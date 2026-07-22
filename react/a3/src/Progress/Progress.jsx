@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useState } from "react";
 import "./Progress.css";
+import HeaderComponent from "../Components/HeaderComponent";
+import FooterComponent from "../Components/FooterComponent";
 
 const Progress = () => {
 
@@ -46,54 +48,70 @@ const Progress = () => {
 
     return (
         <div>
-            <h2>成長記録</h2>
-            <div className="cal-box">
-                <div  className="cal">
-                <p>{ formatted }</p>
+            <HeaderComponent />
+
+            <div className="cal">
+                <p className="cal-text">{ formatted } の記録</p>
+            </div>
+        
+            <div className="effort-box">
+                <div>
+                    <p className="today-effort">🍃今日頑張ったこと</p>
+                    <textarea className="eff-text"
+                        value={comment}
+                        onChange={(e) => setComment(e.target.value)}
+                    />
                 </div>
             </div>
 
             <div>
-                <p>今日頑張ったこと</p>
-                <textarea
-                    value={comment}
-                    onChange={(e) => setComment(e.target.value)}
-                />
-            </div>
+                <div className="feeling-box">
+                    <p className="today-feeling">💗今日の気分</p>
 
-            <div>
-                <p>今日の気分</p>
+                    <div className="feel-box">
+                    {feelings.map((emoji) => (
+                        <label key={emoji} className="feel-item">
+                            <input 
+                            type="radio"
+                            name="feeling"
+                            value={emoji}
+                            checked={feeling === emoji}
+                            onChange={ (e) => setFeeling(e.target.value)}
+                            />
+                            {emoji}
+                        </label>
+                    ))}
+                    </div>
+                </div>
                 
-                {feelings.map((emoji) => (
-                    <label key={emoji} style={{ marginRight: "15px" }}>
-                        <input 
-                        type="radio"
-                        name="feeling"
-                        value={emoji}
-                        checked={feeling === emoji}
-                        onChange={ (e) => setFeeling(e.target.value)}
-                        />
-                        {emoji}
-                    </label>
-                ))}
             </div>
 
             <div>
-                <p>見つけた癒し・幸せ</p>
-                <textarea
-                    value={healing}
-                    onChange={(e) => setHealing(e.target.value)}
-                />
+                <div className="happy-box">
+                    <p className="get-happy">💡見つけた癒し・幸せ</p>
+                    <textarea className="hap-text"
+                        value={healing}
+                        onChange={(e) => setHealing(e.target.value)}
+                    />
+                </div>
             </div>
-
-            <button onClick={handleSubmit}>
-                報告
-            </button>
-
-            <button onClick={handleReset}>
-                リセット
-            </button>  
+            
+            <div className="btns-box">
+                <div className="btns">
+                    <button onClick={handleReset}>
+                        リセット
+                    </button>
+                </div>
+                <div className="btns">
+                    <button onClick={handleSubmit}>
+                        報告
+                    </button>
+                </div>
+            </div>
+            
+            <FooterComponent />
         </div>
+
     );
 };
 
