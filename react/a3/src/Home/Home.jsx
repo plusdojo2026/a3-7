@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import MissionComponent from "../Components/MissionComponent"
 import PlantComponent from "../Components/PlantComponent";
 
+
 const Home = () => {
     let [nickname, setNickname] = useState("");
 

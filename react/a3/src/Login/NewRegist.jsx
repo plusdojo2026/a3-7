@@ -8,20 +8,20 @@ const NewRegist = () => {
     const navigate = useNavigate();
 
     let inputUser = (e) => {
-        setUser({...user, [e.target.name]:e.target.value})
+        setUser({...user, [e.target.name]:e.target.value});
     }
 
     let inputCheck = (e) => {
-        setCheckPass({...checkPass, [e.target.name]:e.target.value})
+        setCheckPass({...checkPass, [e.target.name]:e.target.value});
     }
 
     let clickRegist = () => {
         const mailPatern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         if(!mailPatern.test(user.mailAddress)){
-            alert("ログインIDにはメールアドレスを入力してください")
+            alert("ログインIDにはメールアドレスを入力してください");
         }
         else if(user.password.length < 4) {
-            alert("パスワードは4文字以上でお願いします")
+            alert("パスワードは4文字以上でお願いします");
         }
         else if(user.password != checkPass.check_pass) {
             alert("パスワードが間違っています");
@@ -29,8 +29,8 @@ const NewRegist = () => {
         }
         else{
             axios.post('/api/newRegist', user).then(response => {
-                console.log(response.data);
-                console.log(typeof response.data);
+                //console.log(response.data);
+                //console.log(typeof response.data);
                 if(response.data=="success"){
                     alert("登録成功");
                     navigate("/");
@@ -45,7 +45,7 @@ const NewRegist = () => {
     return(
         <div>
             ログインID<br></br>
-            <input type="text" name="mailAddress" value={user.mail_address} onChange={inputUser}></input>
+            <input type="text" name="mailAddress" value={user.mailAddress} onChange={inputUser}></input>
             <br></br>
             パスワード
             <br></br>

@@ -7,7 +7,7 @@ let MissionComponent = () => {
     const [checkedValues, setCheckedValues] = useState([]);
     let [missions, setMissions] = useState([{id: '', value: '', label: ''}]);
     let [date, setDate] = useState("");
-    let [missionId, setMissionId] = useState([{date: '', suggest1: '', suggest2: '', suggest3: ''}]);
+    let [missionId, setMissionId] = useState([]);
     const max = 9;
     const min = 3;
 
@@ -61,34 +61,35 @@ let MissionComponent = () => {
     };
 
     let missionChange = () => {
-        fetch('/api/mission/include')
-        .then(response => response.json())
-        .then((json) => {
-            const data = [];
-            if(!json.suggest1Completed) {
-                data.push({
-                    id: 1,
-                    value: json.suggest1.suggest,
-                    label: json.suggest1.suggest
-                });
-            }
-             if(!json.suggest2Completed) {
-                data.push({
-                    id: 2,
-                    value: json.suggest2.suggest,
-                    label: json.suggest2.suggest
-                });
-            }
-            if(!json.suggest3Completed) {
-                data.push({
-                    id: 3,
-                    value: json.suggest3.suggest,
-                    label: json.suggest3.suggest
-                });
-            }
-            console.log(data);
-            setMissions(data)
-        });
+        //console.log("問題",missionId);
+            axios.get('/api/mission/include')
+            .then(response => {
+                const json = response.data;
+                const data = [];
+                if(!json.suggest1Completed && json.suggest1) {
+                    data.push({
+                        id: 1,
+                        value: json.suggest1.suggest,
+                        label: json.suggest1.suggest
+                    });
+                }
+                if(!json.suggest2Completed && json.suggest2) {
+                    data.push({
+                        id: 2,
+                        value: json.suggest2.suggest,
+                        label: json.suggest2.suggest
+                    });
+                }
+                if(!json.suggest3Completed && json.suggest3) {
+                    data.push({
+                        id: 3,
+                        value: json.suggest3.suggest,
+                        label: json.suggest3.suggest
+                    });
+                }
+                //console.log(data);
+                setMissions(data)
+            });
     }
 
     useEffect(() => {

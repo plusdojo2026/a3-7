@@ -7,7 +7,7 @@ const Login = () => {
     const navigate = useNavigate();
 
     let inputUser = (e) => {
-        setUser({...user, [e.target.name]:e.target.value})
+        setUser({...user, [e.target.name]:e.target.value});
     }
 
     let clickLogin = () => {
@@ -30,7 +30,7 @@ const Login = () => {
     return(
         <div>
             ログインID<br></br>
-            <input type="text" name="mailAddress" value={user.mail_address} onChange={inputUser}></input>
+            <input type="text" name="mailAddress" value={user.mailAddress} onChange={inputUser}></input>
             <br></br>
             パスワード
             <br></br>
