@@ -19,8 +19,6 @@
 
   box-sizing: border-box;
   z-index: 1000;
-  gap: 20px;
-  padding: 0 10px;
 
 }
 
@@ -37,28 +35,32 @@
 
 .nav-item {
   display: flex;
+  flex: 1;
+  text-align: center;
   flex-direction: column;
   align-items: center;
   gap: 0px;
+
   text-decoration: none;
-  color: #666;
+  color: white;
   font-family: "Zen Maru Gothic", sans-serif;
   font-size: 0.9em;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+
+  transition: all 0.2s;
 }
 
-.nav-item {
-  flex: 1;
-  border-radius: 16px;
-  transition: transform 0.2s ease;
+.nav-item:last-child {
+  border-right: none;
 }
 
 .nav-item:hover {
-  /* transform: translateY(-6px); */
-  transform: translateY(-5px) scale(1.08);
+  /* transform: translateY(-5px) scale(1.08); */
   /* background-color: #e8f5e9; */
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
-.nav-item:active {
-  background-color: rgba(255, 255, 255, 0.1);
-  transform: scale(.95);
+.nav-item.active {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
 }
