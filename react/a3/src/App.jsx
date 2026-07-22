@@ -11,6 +11,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import MyPage from './MyPage/MyPage'
 import FooterComponent from './Components/FooterComponent'
 import Layout from './layouts/layout'
+import LayoutComponent from './Components/LayoutComponent'
+import Progress from './Progress/Progress'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -22,12 +24,16 @@ function App() {
           <Routes>
             <Route path='/' element={<Login></Login>}></Route>
             <Route path='/NewRegist' element={<NewRegist></NewRegist>}></Route>
+
             <Route element={<Layout></Layout>}>
               <Route path='/Home' element={<Home></Home>}></Route>
-              <Route path='/Progress' element={<progress></progress>}></Route>
+            </Route>
 
-              <Route path='/MyPage' element={<MyPage></MyPage>}></Route>
-              </Route>
+            <Route element={<LayoutComponent></LayoutComponent>}>
+            <Route path='/Progress' element={<Progress></Progress>}></Route>
+            <Route path='/MyPage' element={<MyPage></MyPage>}></Route>
+            </Route>
+
           </Routes>
         </BrowserRouter>
       </section>
