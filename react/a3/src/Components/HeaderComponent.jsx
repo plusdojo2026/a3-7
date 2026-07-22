@@ -1,5 +1,5 @@
 // import {useState, useEffect} from 'react';
-import './HeaderComponent.css'
+import './HeaderComponent.css';
 //import axios from 'axios';
 import logout from "../assets/logout.png";
 import { NavLink } from 'react-router-dom';

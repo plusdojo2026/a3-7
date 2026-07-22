@@ -1,4 +1,5 @@
 /*import Common from '../Components';*/
+import Header from "../Components/HeaderComponent";
 import Setting from '../Components/SettingComponent';
 import Gallery from '../Components/GalleryComponent';
 import { useState } from 'react';

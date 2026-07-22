@@ -7,3 +7,4 @@ import com.example.demo.entity.Gallery;
 public interface GalleriesRepository extends JpaRepository<Gallery, Integer> {
 
 }
+

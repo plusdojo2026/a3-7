@@ -4,12 +4,29 @@ const Setting = ({ nickname, setNickname, icon, setIcon}) => {
 
     const icons = ["🦍", "🦖", "🐬", "🐩", "🐈", "🐇"];
 
-    const handleComplete =() => {
-        console.log({
-            nickname,
-            icon
-        });
+    const handleComplete = async () => {
+
+        if (nickname.trim() === "" || icon === "") {
+            alert("ニックネームの入力、またはアイコンの選択をしてください");
+            return;
+        }
+
+        const data = {
+            nickname: nickname,
+            icon: icon
+        };
+
+        try {
+            await axios.post("http://localhost:8080/api/mypage", data
+
+            );
+
         alert("登録しました！");
+
+        } catch(error) {
+            console.error(error);
+            alert("登録に失敗しました");
+        }
     };
 
     return (
