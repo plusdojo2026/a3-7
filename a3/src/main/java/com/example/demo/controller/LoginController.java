@@ -32,8 +32,12 @@ public class LoginController {
 	}
 	
 	@PostMapping("/api/newRegist")
-	private User add(@RequestBody User user) {
+	private String add(@RequestBody User user) {
+		User users =repository.findBymailAddress(user.getMailAddress());
+		if(users!=null) {
+			return "unsuccessful";
+		}
 		repository.save(user);
-		return user;
+		return "success";
 	}
 }

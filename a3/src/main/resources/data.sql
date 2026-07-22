@@ -41,6 +41,6 @@ INSERT INTO plants (user_id, count) values (3, 3);
 --ミッションの保存
 INSERT INTO keeps (user_id, date, suggest1_id, suggest2_id, suggest3_id,
 suggest1_completed, suggest2_completed, suggest3_completed) values
-(2, '2026-7-16', 2, 3, 4, true, true, true),
-(1, '2026-7-17', 5, 6, 7, true, true, true),
-(3, '2026-7-17', 8, 9, 1, true, true, true);
+(2, '2026-7-16', 2, 3, 4, false, false, false),
+(1, '2026-7-17', 5, 6, 7, false, false, false),
+(3, '2026-7-17', 8, 9, 1, false, false, false);
