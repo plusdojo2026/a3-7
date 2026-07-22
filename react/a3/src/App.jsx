@@ -8,6 +8,9 @@ import Home from './Home/Home'
 import Login from './Login/Login'
 import NewRegist from './Login/NewRegist'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import MyPage from './MyPage/MyPage'
+import FooterComponent from './Components/FooterComponent'
+import Layout from './layouts/layout'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -17,8 +20,14 @@ function App() {
       <section id="center">
         <BrowserRouter>
           <Routes>
-            <Route index element={<Login></Login>}></Route>
+            <Route path='/' element={<Login></Login>}></Route>
             <Route path='/NewRegist' element={<NewRegist></NewRegist>}></Route>
+            <Route element={<Layout></Layout>}>
+              <Route path='/Home' element={<Home></Home>}></Route>
+              <Route path='/Progress' element={<progress></progress>}></Route>
+
+              <Route path='/MyPage' element={<MyPage></MyPage>}></Route>
+              </Route>
           </Routes>
         </BrowserRouter>
       </section>

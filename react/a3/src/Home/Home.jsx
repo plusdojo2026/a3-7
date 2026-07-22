@@ -13,7 +13,7 @@ const Home = () => {
 
     return(
         <div>
-            <p>おはようございます。{nickname}さん。</p>
+            <p>ようこそ。{nickname}さん。</p>
             <MissionComponent></MissionComponent>
             <PlantComponent></PlantComponent>
         </div>

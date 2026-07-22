@@ -16,12 +16,29 @@ const NewRegist = () => {
     }
 
     let clickRegist = () => {
-        if(user.password == checkPass.check_pass){
-            axios.post('/api/newRegist', user);
-            navigate("/");
+        const mailPatern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if(!mailPatern.test(user.mailAddress)){
+            alert("ログインIDにはメールアドレスを入力してください")
+        }
+        else if(user.password.length < 4) {
+            alert("パスワードは4文字以上でお願いします")
+        }
+        else if(user.password != checkPass.check_pass) {
+            alert("パスワードが間違っています");
+            
         }
         else{
-            alert("パスワードが間違っています");
+            axios.post('/api/newRegist', user).then(response => {
+                console.log(response.data);
+                console.log(typeof response.data);
+                if(response.data=="success"){
+                    alert("登録成功");
+                    navigate("/");
+                }
+                else if(response.data=="unsuccessful"){
+                    alert("このメールアドレスはすでに登録されています");
+                }
+            })
         }
     }
 

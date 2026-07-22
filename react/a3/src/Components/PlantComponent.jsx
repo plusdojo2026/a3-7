@@ -4,32 +4,35 @@ import heroImg from '../assets/hero.png'
 import { useEffect, useState } from 'react'
 
 let PlantComponent = () => {
-    let[tree, setTree] = useState(heroImg);
+    let[tree, setTree] = useState(reactLogo);
     let[flower, setFlower] = useState(viteLogo);
-    let[count, setCount] = useState("");
 
     useEffect(() => {
         fetch("/api/plant")
         .then(response => response.json())
-        .then(json => {setCount(json)
+        .then(json => {
+            let count = json;
             console.log(json);
-    });
-    }, []);
+            console.log(count);
 
-    let kindPlant = (count) =>{
-        if(count>30){
-            setTree(heroImg);
-            setFlower(heroImg);
-        }
-        else if(count>20){
-            setTree(reactLogo);
-            setFlower(viteLogo);
-        }
-        else if(count>10){
-            setTree(heroImg);
-            setFlower(heroImg);
-        }
-    };
+            if(count>=30){
+                setTree(heroImg);
+                setFlower(heroImg);
+            }
+            else if(count>=20){
+                setTree(reactLogo);
+                setFlower(viteLogo);
+            }
+            else if(count>=10){
+                setTree(heroImg);
+                setFlower(heroImg);
+            }
+            else {
+                setTree(reactLogo);
+                setFlower(viteLogo);
+            }
+        });
+    }, []);
 
     return(
         <div>

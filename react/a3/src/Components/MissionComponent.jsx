@@ -16,10 +16,17 @@ let MissionComponent = () => {
         let today = d.getFullYear()+"-"+String(d.getMonth() + 1).padStart(2, "0")+"-"+String(d.getDate()).padStart(2,"0");
         const data = {date: today, mission: checkedValues.join(', ')};
         console.log(data);
-        axios.post('api/records/add', data)
-        .then(response => {
-            setCheckedValues([]);
-        });
+        if(!data.mission){
+            alert("1つ以上選択してください");
+        }
+        else{
+            axios.post('/api/mission/mod', data);
+            axios.post('/api/records/add', data)
+            .then(response => {
+                setCheckedValues([]);
+                missionChange();
+            })
+        }
     }
 
     let randomNum = (max, min, today) => {
@@ -53,10 +60,42 @@ let MissionComponent = () => {
         }
     };
 
+    let missionChange = () => {
+        fetch('/api/mission/include')
+        .then(response => response.json())
+        .then((json) => {
+            const data = [];
+            if(!json.suggest1Completed) {
+                data.push({
+                    id: 1,
+                    value: json.suggest1.suggest,
+                    label: json.suggest1.suggest
+                });
+            }
+             if(!json.suggest2Completed) {
+                data.push({
+                    id: 2,
+                    value: json.suggest2.suggest,
+                    label: json.suggest2.suggest
+                });
+            }
+            if(!json.suggest3Completed) {
+                data.push({
+                    id: 3,
+                    value: json.suggest3.suggest,
+                    label: json.suggest3.suggest
+                });
+            }
+            console.log(data);
+            setMissions(data)
+        });
+    }
+
     useEffect(() => {
             fetch('/api/mission')
             .then(response => response.json())
             .then((json) => {setDate(json.date);
+                console.log(json);
         });
     },[]);
 
@@ -77,30 +116,8 @@ let MissionComponent = () => {
         }
     },[date]);
 
-    useEffect(() => {        
-            fetch('/api/mission/include')
-            .then(response => response.json())
-            .then((json) => {
-                const data = ([
-                {
-                    id: 1,
-                    value: json.suggest1.suggest,
-                    label: json.suggest1.suggest
-                },
-                {
-                    id: 2,
-                    value: json.suggest2.suggest,
-                    label: json.suggest2.suggest
-                },
-                {
-                    id: 3,
-                    value: json.suggest3.suggest,
-                    label: json.suggest3.suggest
-                }
-            ]);
-            console.log(data);
-                setMissions(data)
-            });
+    useEffect(() => {
+        missionChange();
     },[missionId]);
 
    
@@ -108,15 +125,21 @@ let MissionComponent = () => {
     return (
         <div>
             <h1>🌱今日のおすすめ</h1>
-            {missions.map((mission) => (
-                <label key={mission.id}>
-                <input type="checkbox" value={mission.value} checked={checkedValues.includes(mission.value)} onChange={handleCheckBoxChange}>
-                </input>
-                {mission.label}
-                <br></br>
-                </label>
+            {missions.length === 0 ? (
+                <p>今日のミッションをすべて達成しました</p>
+            ):(
+                <>
+                {missions.map((mission) => (
+                    <label key={mission.id}>
+                    <input type="checkbox" value={mission.value} checked={checkedValues.includes(mission.value)} onChange={handleCheckBoxChange}>
+                    </input>
+                    {mission.label}
+                    <br></br>
+                    </label>
             ))}
             <button onClick={clearMission}>達成</button>
+            </>
+        )}
         </div>
     );
 }

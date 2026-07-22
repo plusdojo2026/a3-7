@@ -15,7 +15,7 @@ const Login = () => {
         axios.post('/api/login', user)
         .then(() => {
             console.log("success");
-            navigate("/home");
+            navigate("/Home");
         })
         .catch((err) => {
             console.log("error", err);
