@@ -1,6 +1,7 @@
 .footer {
-  background-color: #ffffff;
-  border-top: 1px solid #e5e5e5;
+  background-color: #6D4C41;
+  /* border-top: 1px solid #e5e5e5; */
+  border-top: 1px solid rgba(255,255,255,0.15);
   box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
 
   position: fixed;
@@ -23,10 +24,14 @@
 
 }
 
+.footer p{
+  color: #ffffff;
+  font-size: 1.05em;
+}
 
 .nav-item img {
   width: 60px;
-  height: 60px;
+  height: 55px;
   object-fit: contain;
 }
 
@@ -50,10 +55,10 @@
 .nav-item:hover {
   /* transform: translateY(-6px); */
   transform: translateY(-5px) scale(1.08);
-  background-color: #e8f5e9;
+  /* background-color: #e8f5e9; */
 }
 
 .nav-item:active {
-  background-color: #e8f5e9;
+  background-color: rgba(255, 255, 255, 0.1);
   transform: scale(.95);
 }

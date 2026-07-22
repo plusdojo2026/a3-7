@@ -1,10 +1,10 @@
 // import {useState, useEffect} from 'react';
 import './FooterComponent.css'
 //import axios from 'axios';
-import home from "../assets/home.png";
-import record from "../assets/record.png";
-import input from "../assets/input.png";
-import mypage from "../assets/mypage.svg";
+import home from "../assets/home2.png";
+import record from "../assets/record2.png";
+import input from "../assets/input2.png";
+import mypage from "../assets/mypage.png";
 import { NavLink } from 'react-router-dom';
 
 const FooterComponent = () => {
