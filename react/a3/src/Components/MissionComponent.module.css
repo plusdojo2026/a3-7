@@ -1,6 +1,23 @@
 .cloud{
-  content: "";
-  position: absolute;
-  background: white;
-  border-radius: 50%;
+    background-color: white;
+    width: 80%;
+    height: 100%;
+    padding: 3%;
+    margin: auto;
+    text-align: center;
+    border-radius: 100px;
+}
+.heading{
+    font-size: 30px;
+    margin: 0;
+}
+.mission{
+    padding: 3%;
+}
+.button{
+    background-color:rgb(207, 255, 210);
+    border-radius: 50px;
+    width: 20%;
+    margin-top: 3%;
+    font-size: 16px;
 }
