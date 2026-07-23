@@ -7,7 +7,7 @@ body {
 
 /*カレンダー*/
 .cal {
-    margin-top: 22%;
+    margin-top: 5%;
     font-size: 20px;
 }
 /*.cal-text {
@@ -93,4 +93,8 @@ body {
     padding: 7px;
     border: none;
     border-radius: 30px;
+}
+.btns button:active {
+    background-color: #5D8165;
+    color: #fff;
 }

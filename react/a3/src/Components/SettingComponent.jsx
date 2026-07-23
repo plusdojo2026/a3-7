@@ -34,18 +34,18 @@ const Setting = ({ nickname, setNickname, icon, setIcon}) => {
         <div>
             
             <section>
-                <h3>＜プロフィール＞</h3>
+                <h3>-プロフィール-</h3>
 
-                <div className="nickname">
-                    <p>ニックネーム</p>
+                <div className={styles["nickname"]}>
+                    <p>⋆ニックネーム⋆</p>
                     <input type="text" 
                         value={nickname}
-                        onChange={(e) => setNickname(e.target.value)}
+                        onChange={(e) => setNickname(e.target.value)} className={styles["nick-box"]}
                     />
                 </div>
                     
-                <div className="icon-box">
-                    <p>アイコン選択</p>
+                <div>
+                    <p className={styles["sel-icon"]}>⋆アイコン選択⋆</p>
 
                     <div className={styles["icon-list"]}>
                         {icons.map((picture) => (
@@ -66,10 +66,12 @@ const Setting = ({ nickname, setNickname, icon, setIcon}) => {
                 </div>
 
                 <br />
-
-                <button onClick={handleComplete}>
-                    完了
-                </button>
+                
+                <div className={styles["comp-btn"]}>
+                    <button onClick={handleComplete}>
+                        完了
+                    </button>
+                </div>
 
                 </section>
             

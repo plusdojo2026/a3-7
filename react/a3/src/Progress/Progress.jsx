@@ -51,7 +51,7 @@ const Progress = () => {
             <HeaderComponent />
 
             <div className="cal">
-                <p className="cal-text">{ formatted } の記録</p>
+                <p className="cal-text">-{ formatted } の記録-</p>
             </div>
         
             <div className="effort-box">

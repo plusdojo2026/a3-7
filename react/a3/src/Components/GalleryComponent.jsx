@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import styles from "./GalleryComponent.module.css";
 
 const Gallery =() => {
 
@@ -10,7 +11,7 @@ const Gallery =() => {
 
     return (
         <section>
-            <h4>＜ベストショット＞</h4>
+            <h3>-ベストショット-</h3>
             
             <input 
                 type="file"
@@ -18,7 +19,9 @@ const Gallery =() => {
                 onChange={(e) => setaImage(e.target.files[0])}
             />
 
-            <button onClick={handleUpload}>追加</button>
+            <div className={styles["up-btn"]}>
+                <button onClick={handleUpload}>追加</button>
+            </div>
 
             <div>
                 (画像表示場所)

@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+.up-btn {
+    margin-top: 15px;
+    width: 100%;
+}
+
+.up-btn button {
+    width: 25%;
+    color: #5d3a1a;
+    background-color: rgb(252, 175, 23, 0.4);
+    padding: 6px;
+    border: none;
+    border-radius: 30px;
+}
+
+.up-btn button:active {
+    background-color: #E29956;
+    color: #fff;
+}

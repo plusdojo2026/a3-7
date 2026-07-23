@@ -2,22 +2,30 @@
 
 /*プロフィール*/
 h3 {
-    margin-top: 22%;
+    margin-top: 5%;
 }
 
 /*ニックネーム*/
 .nickname {
-
+    margin: 7%;
+    font-weight: 500;
 }
 
+.nick-box {
+    width: 70%;
+    height: 20px;
+}
 
 /*アイコン*/
+.sel-icon {
+    font-weight: 500;
+}
 
 .icon-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;  /*アイコン同士の隙間*/
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .icon-item {
@@ -31,8 +39,21 @@ h3 {
     margin-bottom: 10px;
 }
 
+/*完了ボタン*/
+.comp-btn {
+    margin-top: 10px;
+    width: 100%;
+}
 
-
-
-
-/*ベストショット*/
+.comp-btn button {
+    width: 25%;
+    color: #00331c;
+    background-color: #d9f2d0;
+    padding: 6px;
+    border: none;
+    border-radius: 30px;
+}
+.comp-btn button:active {
+    background-color: #5D8165;
+    color: #fff;
+}
