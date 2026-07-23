@@ -1,18 +1,41 @@
-.cloud{
-    background-color: white;
-    width: 80%;
-    height: 100%;
-    padding: 3%;
-    margin: auto;
-    text-align: center;
-    border-radius: 100px;
+.cloud {
+  width: 390px;
+  height: 290px;
+  top:1%;
+
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 63px 60px 63px;
+  box-sizing: border-box;
 }
+
+.heading {
+  margin: 0 0 20px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.list {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
 .heading{
-    font-size: 30px;
-    margin: 0;
+    font-size: 25px;
+    margin: 5px 0 16px -11%;
+    text-align: center;
 }
 .mission{
-    padding: 3%;
+    font-size: 20px;
+    padding: 4%;
 }
 .button{
     background-color:rgb(207, 255, 210);
@@ -20,4 +43,14 @@
     width: 20%;
     margin-top: 3%;
     font-size: 16px;
+    position: absolute;
+    bottom: 265px;
+
+}
+.all{
+    font-size: 30px;
+    padding-top: 18%;
+}
+.complete{
+    font-size: 30px;
 }

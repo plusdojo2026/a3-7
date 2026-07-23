@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import axios from 'axios';
 import styles from "./MissionComponent.module.css";
+import cloud from '../assets/cloud-1.png'
 
 
 let MissionComponent = () => {
@@ -125,11 +126,14 @@ let MissionComponent = () => {
    
 
     return (
-        <div className={styles.cloud}>
-            <div>
-                <p className={styles.heading}>今日のおすすめ</p>
+        <div className={styles.cloud} style={{backgroundImage: `url(${cloud})`}}>
+                <p className={styles.heading}>🍀今日のおすすめ</p>
                 {missions.length === 0 ? (
-                    <p>今日のミッションをすべて達成しました</p>
+                    <>
+                        <p className={styles.all}>今日のミッションをすべて</p>
+                        <br></br>
+                        <p className={styles.complete}>達成しました</p>
+                    </>
                 ):(
                     <>
                     {missions.map((mission) => (
@@ -145,7 +149,6 @@ let MissionComponent = () => {
                 <button onClick={clearMission} className={styles.button}>達成</button>
                 </>
             )}
-            </div>
         </div>
     );
 }
