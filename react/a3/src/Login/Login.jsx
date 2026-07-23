@@ -1,6 +1,8 @@
 import axios from 'axios';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './Login.css'
+import line from "../assets/line.png";
 
 const Login = () => {
     let [user, setUser] = useState({mailAddress: '', password:''});
@@ -28,18 +30,28 @@ const Login = () => {
     }
 
     return(
-        <div>
-            ログインID<br></br>
-            <input type="text" name="mailAddress" value={user.mailAddress} onChange={inputUser}></input>
+        <div className='login-container'>
+
+            <div className='login-box'>
+            <h1>きょうのいっぽ</h1>
+            <img src={line} alt="ライン" className='title-line' />
+            
+            {/* ログインID<br></br> */}
+            <input type="email" name="mailAddress" value={user.mailAddress} onChange={inputUser} placeholder='メールアドレス'></input>
             <br></br>
-            パスワード
+            {/* パスワード */}
+            <input type="password" name="password" value={user.password} onChange={inputUser} placeholder='パスワード'></input>
             <br></br>
-            <input type="password" name="password" value={user.password} onChange={inputUser}></input>
+            <div className='button-group'>
+            <button onClick={clickLogin} className='login-btn'>ログイン</button>
+            <button onClick={reset} className='reset-btn'>リセット</button>
+            </div>
             <br></br>
-            <button onClick={clickLogin}>ログイン</button>
-            <button onClick={reset}>リセット</button>
-            <br></br>
-            <a href='/NewRegist'>新規登録</a>
+            <p className='register'>
+                アカウントをお持ちでない方
+            </p>
+            新規登録は<a href='/NewRegist'>こちら</a>
+            </div>
         </div>
     );
 }

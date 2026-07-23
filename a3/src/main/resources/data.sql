@@ -5,7 +5,6 @@ INSERT INTO icons (icon_name, icon_path) values ('イルカ','/a3/img/dolphin.pn
 INSERT INTO icons (icon_name, icon_path) values ('イヌ','/a3/img/dog.png');
 INSERT INTO icons (icon_name, icon_path) values ('ゴリラ','/a3/img/gorilla.png');
 INSERT INTO icons (icon_name, icon_path) values ('ウサギ', '/a3/img/rabbit.png');
-INSERT INTO icons (icon_name, icon_path) values ('シロクマ','/a3/img/whiteBear.png');
 
 -- ユーザ情報
 INSERT INTO users (mail_address, password, nickname, icon_id) VALUES

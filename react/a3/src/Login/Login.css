@@ -1,0 +1,106 @@
+body{
+    margin: 0;
+    font-family:"Zen Maru Gothic", sans-serif;
+    background:#F8F3E8;
+}
+
+.login-container{
+    position:relative;
+    min-height:100vh;
+    overflow:hidden;
+
+    background:#F8F3E8;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:40px 20px;
+    margin: 0 auto;
+}
+
+.login-box{
+    width:100%;
+    max-width:380px;
+
+    text-align:center;
+
+    z-index:10;
+}
+
+h1{
+    font-size:40px;
+    color:#5D4633;
+    margin-bottom:15px;
+    margin-bottom: 20px;
+}
+
+input[name="mailAddress"],[name="password"]{
+    width:80%;
+    padding:18px 20px;
+    margin-bottom:25px;
+    border:none;
+    border-radius:18px;
+    background:white;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    font-size:17px;
+    box-sizing:border-box;
+    
+}
+
+.button-group{
+    width: 100%;
+    display:flex;
+    gap:15px;
+    margin:20px auto 0px;
+    max-width: 320px;
+}
+
+.button-group button{
+    flex:1;
+    padding:18px;
+    border:none;
+    border-radius:18px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.login-btn{
+    background:#7C9B56;
+    color:white;
+}
+
+.login-btn:hover{
+    background:#678247;
+}
+
+.reset-btn{
+    background:#E8E2D5;
+    color:#5D4633;
+    border:2px solid #D7CFBF;
+}
+
+.reset-btn:hover{
+    background:#DDD5C5;
+}
+
+.register{
+    margin-top:40px;
+    color:#666;
+}
+
+a{
+    display:inline-block;
+    margin-top:12px;
+    color:#7C9B56;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:20px;
+}
+
+.title-line{
+    width:180px;
+    display:block;
+    margin:0 auto 30px;
+}
