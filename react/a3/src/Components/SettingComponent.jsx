@@ -1,9 +1,22 @@
+import axios from "axios";
 import styles from "./SettingComponent.module.css";
-
+import cat from "../assets/cat.png";
+import dog from "../assets/dog.png";
+import rabbit from "../assets/rabbit.png";
+import gorilla from "../assets/gorilla.png";
+import dolphin from "../assets/dolphin.png";
+import dinosaur from "../assets/dinosaur.png";
 
 const Setting = ({ nickname, setNickname, icon, setIcon}) => {
 
-    const icons = ["🦍", "🦖", "🐬", "🐩", "🐈", "🐇"];
+    const icons = [
+        { id: 1,image: cat },
+        { id: 2,image: dog },
+        { id: 3,image: rabbit },
+        { id: 4,image: gorilla },
+        { id: 5,image: dolphin },
+        { id: 6, image: dinosaur }
+    ];
 
     const handleComplete = async () => {
 
@@ -11,16 +24,18 @@ const Setting = ({ nickname, setNickname, icon, setIcon}) => {
             alert("ニックネームの入力、またはアイコンの選択をしてください");
             return;
         }
-
+        
         const data = {
             nickname: nickname,
-            icon: icon
+            icon: {
+                id: icon
+            }
         };
 
-        try {
-            await axios.post("http://localhost:8080/api/mypage", data
+        console.log(data);
 
-            );
+        try {
+            await axios.post("http://localhost:8080/api/mypage", data);
 
         alert("登録しました！");
 
@@ -48,16 +63,20 @@ const Setting = ({ nickname, setNickname, icon, setIcon}) => {
                     <p className={styles["sel-icon"]}>⋆アイコン選択⋆</p>
 
                     <div className={styles["icon-list"]}>
-                        {icons.map((picture) => (
-                                <label key={picture} className={styles["icon-item"]}>
-                                    <span className={styles["icon-picture"]}>{picture}</span>
+                        {icons.map((item) => (
+                                <label key={item.id} className={styles["icon-item"]}>
+                                    
+                                    <img
+                                        src={item.image}
+                                        className={styles["icon-picture"]}
+                                    />
 
                                         <input
                                         type="radio"
                                         name="icon"
-                                        value={picture}
-                                        checked={icon === picture}
-                                        onChange={ (e) => setIcon(e.target.value)}
+                                        value={item.id}
+                                        checked={icon === item.id}
+                                        onChange={ (e) => setIcon(Number(e.target.value))}
                                     />
                                     
                                 </label>

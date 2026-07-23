@@ -2,7 +2,7 @@
 
 /*プロフィール*/
 h3 {
-    margin-top: 5%;
+    margin-top: 15%;
 }
 
 /*ニックネーム*/
@@ -24,7 +24,7 @@ h3 {
 .icon-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;  /*アイコン同士の隙間*/
+    gap: 15px;  /*アイコン同士の隙間*/
     margin-top: 20px;
 }
 
@@ -32,11 +32,14 @@ h3 {
     display: flex;  /*縦表示↓*/
     flex-direction: column;
     align-items: center;
-    font-size: 40px;
+    height: 120px;
 }
 
 .icon-picture {
+    width: 90px;
+    height: 90px;
     margin-bottom: 10px;
+    object-fit: contain; /*画像比率固定*/
 }
 
 /*完了ボタン*/
