@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -100,10 +101,10 @@ public class HomeController {
 		Integer id = (Integer) session.getAttribute("loginUserId");
 		User user = userRepository.findById(id).orElseThrow();
 		LocalDate today = LocalDate.now();
-		Optional<Record> oldRecord = recordRepository.findByUserAndDate(user, today);
-		if (oldRecord.isPresent()) {
+		List<Record> oldRecord = recordRepository.findByUserAndDate(user, today);
+		if (!oldRecord.isEmpty()) {
 			// 更新
-			Record update = oldRecord.get();
+			Record update = oldRecord.get(0);
 			String mission = update.getMission();
 			update.setMission(mission + ", "+ record.getMission());
 			recordRepository.save(update);
