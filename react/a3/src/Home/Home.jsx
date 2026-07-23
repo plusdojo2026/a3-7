@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import MissionComponent from "../Components/MissionComponent"
 import PlantComponent from "../Components/PlantComponent";
-
+import "./Home.css";
+import "../Components/MissionComponent.module.css";
 
 const Home = () => {
     let [nickname, setNickname] = useState("");
@@ -13,10 +14,12 @@ const Home = () => {
     }, []);
 
     return(
+        <div className="home">
         <div>
-            <p>ようこそ。{nickname}さん。</p>
+            <p className="name">ようこそ。{nickname}さん。</p>
             <MissionComponent></MissionComponent>
             <PlantComponent></PlantComponent>
+        </div>
         </div>
     )
 }
