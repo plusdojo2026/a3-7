@@ -13,6 +13,7 @@ import FooterComponent from './Components/FooterComponent'
 import Layout from './layouts/layout'
 import LayoutComponent from './Components/LayoutComponent'
 import Progress from './Progress/Progress'
+import Memory from './Memory/Memory'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -32,6 +33,7 @@ function App() {
             <Route element={<LayoutComponent></LayoutComponent>}>
             <Route path='/Progress' element={<Progress></Progress>}></Route>
             <Route path='/MyPage' element={<MyPage></MyPage>}></Route>
+            <Route path='/Memory' element={<Memory></Memory>}></Route>
             </Route>
 
           </Routes>
