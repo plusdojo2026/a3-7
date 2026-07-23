@@ -10,7 +10,7 @@ let LayoutComponent = () => {
             {/* <main className="main">
             {children}
             </main> */}
-            <main className="main">
+            <main className="main-com">
                 <Outlet></Outlet>
             </main>
             <FooterComponent></FooterComponent>

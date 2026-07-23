@@ -43,14 +43,13 @@ const Login = () => {
             <input type="password" name="password" value={user.password} onChange={inputUser} placeholder='パスワード'></input>
             <br></br>
             <div className='button-group'>
-            <button onClick={clickLogin} className='login-btn'>ログイン</button>
             <button onClick={reset} className='reset-btn'>リセット</button>
+            <button onClick={clickLogin} className='login-btn'>ログイン</button>
             </div>
-            <br></br>
             <p className='register'>
                 アカウントをお持ちでない方
             </p>
-            新規登録は<a href='/NewRegist'>こちら</a>
+            新規登録は<a href='/NewRegist' className="register-link">こちら</a>
             </div>
         </div>
     );

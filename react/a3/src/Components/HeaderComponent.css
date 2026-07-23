@@ -51,6 +51,7 @@
   height: 30px;
   display: block;
   transition: transform 0.2s ease;
+  margin-top: 8px;
 }
 
 .logout-icon img:hover {

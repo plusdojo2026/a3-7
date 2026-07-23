@@ -11,29 +11,23 @@
 
   width: 100%;
   max-width: 430px;
-  /* height: 80px; */
+  height: 80px;
 
   display: flex;
   justify-content: space-around;
-  align-items: stretch;
+  align-items: center;
 
   box-sizing: border-box;
   z-index: 1000;
-
-  min-height: 80px;
-
 }
 
-.footer p{
-  color: #ffffff;
-  font-size: 1.05em;
-}
 
 .nav-item img {
   width: 60px;
   height: 55px;
   object-fit: contain;
 }
+
 
 .nav-item {
   display: flex;
@@ -46,13 +40,10 @@
   text-decoration: none;
   color: white;
   font-family: "Zen Maru Gothic", sans-serif;
-  font-size: 0.9em;
+  font-size: 1em;
   border-right: 1px solid rgba(255, 255, 255, 0.2);
 
   transition: all 0.2s;
-  justify-content: center;
-  height: 100%;
-  align-self: stretch;
 }
 
 .nav-item:last-child {
@@ -63,7 +54,6 @@
   /* transform: translateY(-5px) scale(1.08); */
   /* background-color: #e8f5e9; */
   background-color: rgba(255, 255, 255, 0.1);
-
 }
 
 .nav-item.active {

@@ -1,0 +1,40 @@
+.register-box{
+    width:100%;
+    max-width:380px;
+    text-align:center;
+
+    z-index:10;
+
+    position:relative;
+    min-height:100vh;
+    overflow:hidden;
+
+    background:#F8F3E8;
+    justify-content:center;
+    align-items:center;
+
+    padding:80px 20px 0px;
+    margin: 0 auto;
+} 
+
+
+.login-btn{
+    background:#7C9B56;
+    color:white;
+}
+
+.login-btn:hover{
+    background:#678247;
+}
+
+button{
+    flex:1;
+    padding:15px 40px;
+    border:none;
+    border-radius:40px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+    margin-bottom: 30px;
+}

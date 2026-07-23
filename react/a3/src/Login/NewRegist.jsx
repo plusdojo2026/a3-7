@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import line from "../assets/line.png";
+import './NewRegist.css'
 
 const NewRegist = () => {
     let [user, setUser] = useState({ mailAddress: '', password: '' });
@@ -44,7 +45,7 @@ const NewRegist = () => {
     }
 
     return (
-        <div>
+        <div className='register-box'>
             <h1>きょうのいっぽ</h1>
             <img src={line} alt="ライン" className='title-line' />
             <p>新規登録</p>
