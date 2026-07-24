@@ -55,21 +55,21 @@
       scale(0.8);
   }
 }
-/*
-#center {
+
+/* #center {
   display: flex;
   flex-direction: column;
   gap: 25px;
   place-content: center;
   place-items: center;
-  flex-grow: 1;
+  flex-grow: 1; 
 
   @media (max-width: 1024px) {
-    padding: 32px 20px 24px;
+    padding: 0px 0px 24px;
     gap: 18px;
   }
-}
-*/
+} */
+
 #next-steps {
   display: flex;
   border-top: 1px solid var(--border);
