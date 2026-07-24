@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import line from "../assets/line.png";
 import './NewRegist.css'
+import { FaEnvelope } from 'react-icons/fa';
+import { FaLock } from 'react-icons/fa';
 
 const NewRegist = () => {
     let [user, setUser] = useState({ mailAddress: '', password: '' });
@@ -48,17 +50,26 @@ const NewRegist = () => {
         <div className='register-box'>
             <h1>きょうのいっぽ</h1>
             <img src={line} alt="ライン" className='title-line' />
-            <p>新規登録</p>
+            <p className='register-title'>新規登録</p>
             <br></br>
+            <div className='input-box'>
+            <FaEnvelope className='input-icon'/>
             <input type="text" name="mailAddress" value={user.mailAddress} onChange={inputUser} placeholder='メールアドレス'></input>
-            <br></br>
+            </div>
+            <div className='input-box'>
+            <FaLock className='input-icon'></FaLock>
             <input type="password" name="password" value={user.password} onChange={inputUser} placeholder='パスワード'></input>
-            <br></br>
+            </div>
+            <div className='input-box'>
+            <FaLock className='input-icon'></FaLock>
             <input type='password' name="password" value={checkPass.check_pass} onChange={inputCheck} placeholder='パスワード(確認)'></input>
+            </div>
             <br></br>
-            <button onClick={clickRegist} className='login-btn'>登録</button>
+            <button onClick={clickRegist} className='register-btn'>登録</button>
             <br></br>
-            アカウントをお持ちの方は、<a href='/'>ログイン</a>
+            <div className='register-comment'>
+            アカウントをお持ちの方は、<a href='/' className="login-link">ログイン</a>
+            </div>
         </div>
     );
 }

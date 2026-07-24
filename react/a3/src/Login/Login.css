@@ -1,20 +1,12 @@
-body{
-    margin: 0;
-    font-family:"Zen Maru Gothic", sans-serif;
-    background:#F8F3E8;
-}
-
 .login-container{
     position:relative;
     min-height:100vh;
     overflow:hidden;
-
-    background:#F8F3E8;
     display:flex;
     justify-content:center;
     align-items:center;
 
-    padding:40px 20px;
+    padding:0px 10px;
     margin: 0 auto;
 }
 
@@ -23,21 +15,27 @@ body{
     max-width:380px;
 
     text-align:center;
-
     z-index:10;
 }
 
 h1{
     font-size:40px;
     color:#5D4633;
-    margin-bottom:15px;
-    margin-bottom: 20px;
+    margin-bottom:20px;
+    font-family: "Zen Maru Gothic", sans-serif;
 }
 
-input[name="mailAddress"],[name="password"]{
+.input-box{
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto 10px;
+}
+
+.input-box input[name="mailAddress"],[name="password"]{
     width:80%;
-    padding:18px 20px;
-    margin-bottom:25px;
+    padding:18px 40px;
+    margin-bottom:10px;
     border:none;
     border-radius:18px;
     background:white;
@@ -47,24 +45,33 @@ input[name="mailAddress"],[name="password"]{
     
 }
 
+.input-icon{
+    position: absolute;
+    top: 40%;
+    left: 48px;
+    transform: translateY(-50%);
+    color: #8BB174;
+    font-size: 18px;
+}
+
 .button-group{
     width: 100%;
     display:flex;
     gap:15px;
     margin:20px auto 0px;
-    max-width: 320px;
+    max-width: 300px;
 }
 
 .button-group button{
     flex:1;
-    padding:18px;
+    padding:15px;
     border:none;
-    border-radius:18px;
-    font-size:18px;
+    border-radius:40px;
+    font-size:20px;
     font-weight:bold;
     cursor:pointer;
     transition:0.3s;
-    
+    font-family: "Zen Maru Gothic", sans-serif;
 }
 
 .login-btn{
@@ -87,8 +94,10 @@ input[name="mailAddress"],[name="password"]{
 }
 
 .register{
-    margin-top:40px;
     color:#666;
+    font-size: 18px;
+    font-family: "Zen Maru Gothic", sans-serif;
+    margin-bottom: 10px;
 }
 
 .register-link{
@@ -104,5 +113,28 @@ input[name="mailAddress"],[name="password"]{
 .title-line{
     width:300px;
     display:block;
-    margin:0 auto 30px;
+    margin:0 auto 40px;
+}
+
+.leaf-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 300px;
+    margin: 30px auto 30px;
+}
+
+.leaf-icon::before,
+.leaf-icon::after{
+    content: "";
+    flex: 1;
+    height: 2px;
+    background-color: rgba(139, 177, 116, 0.5);
+}
+
+.leaf-icon img{
+    width: 24px;
+    height: 24px;
+    margin: 0 15px;
 }
