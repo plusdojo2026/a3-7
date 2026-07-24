@@ -3,7 +3,7 @@ import './HeaderComponent.css';
 //import axios from 'axios';
 import logout from "../assets/logout.png";
 import { NavLink, useNavigate } from 'react-router-dom';
-
+import leaf from "../assets/leaf.png";
 
 const HeaderComponent = () => {
 
@@ -14,16 +14,19 @@ const HeaderComponent = () => {
 
         const result = window.confirm('ログアウトしますか？');
 
-            if (result) {
-                navigate("/");
-            }
+        if (result) {
+            navigate("/");
+        }
 
 
     };
 
     return (
         <header className="header">
-            <p>🌱きょうのいっぽ</p>
+            <div className="leaf">
+                <img src={leaf} alt="葉っぱ" />
+            </div>
+            <p>きょうのいっぽ</p>
             <NavLink to="/" className="logout-icon" onClick={handleLogout}>
                 <img src={logout} alt="ログアウト" />
             </NavLink>

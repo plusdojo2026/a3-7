@@ -1,0 +1,57 @@
+.register-box{
+    width:100%;
+    max-width:380px;
+    text-align:center;
+
+    z-index:10;
+
+    position:relative;
+    min-height:100vh;
+    overflow:hidden;
+
+    /* background:#F8F3E8; */
+    justify-content:center;
+    align-items:center;
+
+    padding:90px 20px 0px;
+    margin: 0 auto;
+} 
+
+
+.register-btn{
+    background:#7C9B56;
+    color:white;
+    flex:1;
+    padding:15px 40px;
+    border:none;
+    border-radius:40px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+    margin-bottom: 20px;
+}
+
+.register-btn:hover{
+    background:#678247;
+    text-decoration: underline;
+}
+
+.login-link{
+    display:inline-block;
+    margin-top:12px;
+    color:#7C9B56;
+    text-decoration:underline;
+    font-weight:bold;
+    
+    /* font-size:20px; */
+}
+
+.register-title{
+    font-size: 20px;
+}
+
+.register-comment{
+    font-family: "Zen Maru Gothic", sans-serif;
+}
+

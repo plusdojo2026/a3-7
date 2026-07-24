@@ -7,7 +7,7 @@
   max-width: 430px;
   height: 65px;
 
-  background-color: #fffdf8;
+  background-color: #ffffff;
   text-align: center;
   /* margin: 20px; */
   box-shadow: 0 2px 4px rgba(0,0,0,0.3);
@@ -51,6 +51,7 @@
   height: 30px;
   display: block;
   transition: transform 0.2s ease;
+  margin-top: 8px;
 }
 
 .logout-icon img:hover {
@@ -60,4 +61,11 @@
 
 .logout-icon img:active {
   transform: scale(.95);
+}
+
+
+.leaf img{
+    width: 30px;
+    height: 30px;
+    margin: 0px;
 }
