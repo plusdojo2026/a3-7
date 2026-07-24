@@ -6,8 +6,12 @@ import rabbit from "../assets/rabbit.png";
 import gorilla from "../assets/gorilla.png";
 import dolphin from "../assets/dolphin.png";
 import dinosaur from "../assets/dinosaur.png";
+import { useState } from "react";
 
-const Setting = ({ nickname, setNickname, icon, setIcon}) => {
+const Setting = () => {
+
+    const [nickname, setNickname] = useState("");
+    const [icon, setIcon] = useState("");
 
     const icons = [
         { id: 1,image: cat },
@@ -28,14 +32,15 @@ const Setting = ({ nickname, setNickname, icon, setIcon}) => {
         const data = {
             nickname: nickname,
             icon: {
-                id: icon
-            }
+            id: icon
+  }
+            
         };
 
         console.log(data);
 
         try {
-            await axios.post("http://localhost:8080/api/mypage", data);
+            await axios.post('/api/mypage', data);
 
         alert("登録しました！");
 

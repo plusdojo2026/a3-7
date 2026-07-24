@@ -33,7 +33,11 @@ const Progress = () => {
             healing
         });
 
+        const cfh = {progress: comment, feel: feeling, found: healing};
+
         //SpringBootへ送信する
+
+        axios.post('/api/progress', cfh);
 
         alert("登録しました！");
     };
