@@ -10,7 +10,9 @@ INSERT INTO icons (icon_name, icon_path) values ('ウサギ', '/a3/img/rabbit.pn
 INSERT INTO users (mail_address, password, nickname, icon_id) VALUES
 ('yamada@example.com', 'password123', 'やまだ', 1),
 ('suzuki@example.com', 'password789', 'すずき', 3),
-('tanaka@example.com', 'pass456', 'たなか', 2);
+('tanaka@example.com', 'pass456', 'たなか', 2),
+('ai@example.com', 'pass1', 'あい', 4),
+('taro@example.com', 'pass2', 'たろう', 5);
 
 
 --自然ミッションの提案
