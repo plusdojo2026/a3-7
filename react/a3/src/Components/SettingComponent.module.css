@@ -2,7 +2,7 @@
 
 /*プロフィール*/
 h3 {
-    margin-top: 15%;
+    margin-top: 5%;
 }
 
 /*ニックネーム*/
@@ -44,7 +44,6 @@ h3 {
 
 /*完了ボタン*/
 .comp-btn {
-    margin-top: 10px;
     width: 100%;
 }
 

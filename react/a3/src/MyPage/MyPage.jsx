@@ -19,12 +19,7 @@ const MyPage = () => {
             <main>
             
 
-            <Setting
-                nickname={nickname}
-                setNickname={setNickname}
-                icon={icon}
-                setIcon={setIcon}
-            />
+            <Setting />
 
             <Gallery />
             </main>
