@@ -1,11 +1,13 @@
 @charset "UTF-8";
 
-.up-btn {
-    margin-top: 15px;
+/*追加ボタン*/
+.upBtn {
+    margin-top: 20px;
     width: 100%;
 }
 
-.up-btn button {
+.upBtn button {
+    margin-bottom: 20px;
     width: 25%;
     color: #5d3a1a;
     background-color: rgb(252, 175, 23, 0.4);
@@ -18,3 +20,36 @@
     background-color: #E29956;
     color: #fff;
 }
+
+/*画像表示*/
+.gallery {
+    display: flex;
+    flex-direction: column;  /*縦並び*/
+    align-items: center;
+    gap: 20px;
+}
+.gallery img {
+    width: 280px;
+    height: auto;
+}
+
+.deleteBtn {
+    margin-top: 5px;
+}
+
+/*さらに表示*/
+.moreBtn {
+    margin-top: 30px;
+}
+.moreBtn button{
+    background-color: #fffaf0;
+    border-color: #E29956;
+    
+}
+.moreBtn button:hover {
+    transform: rotate(4deg);
+} /*揺れる*/
+ 
+/*.moreBtn button:active {
+    transform: scale(0.95);
+}  /*押し込みボタン*/

@@ -33,5 +33,5 @@ public class Gallery {
 	private User user;
 	//private Integer user_id;
 	@Lob
-	private byte[] image;
+	private String image;
 }
