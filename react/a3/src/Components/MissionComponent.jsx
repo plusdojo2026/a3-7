@@ -130,7 +130,7 @@ let MissionComponent = () => {
                 <p className={styles.heading}>🍀今日のおすすめ</p>
                 {missions.length === 0 ? (
                     <>
-                        <p className={styles.all}>今日の癒しの提案を</p>
+                        <p className={styles.all}>今日のミッションを</p>
                         <br></br>
                         <p className={styles.complete}>すべて達成しました</p>
                     </>

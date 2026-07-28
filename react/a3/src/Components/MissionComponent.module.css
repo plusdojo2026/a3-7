@@ -33,14 +33,19 @@
     padding: 3%;
 }
 .button{
-    background-color:rgb(207, 255, 210);
+    color: #00331c;
+    background-color: #d9f2d0;
     border-radius: 50px;
     width: 20%;
     margin-top: 3%;
     font-size: 16px;
     position: absolute;
     bottom: 51%;
-
+    border: none;
+}
+.button button:active {
+    background-color: #5D8165;
+    color: #fff;
 }
 .all{
     font-size: 29px;
