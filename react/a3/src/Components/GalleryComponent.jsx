@@ -77,7 +77,7 @@ const Gallery = () => {
                         <div className={styles.deleteBtn}>    
                             <button 
                                 onClick={() => handleDelete(item.id)}>
-                                削除
+                                削 除
                             </button>
                         </div>
                     </div>
