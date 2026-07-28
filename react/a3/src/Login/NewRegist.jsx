@@ -62,7 +62,7 @@ const NewRegist = () => {
             </div>
             <div className='input-box'>
             <FaLock className='input-icon'></FaLock>
-            <input type='password' name="password" value={checkPass.check_pass} onChange={inputCheck} placeholder='パスワード(確認)'></input>
+            <input type='password' name="check_pass" value={checkPass.check_pass} onChange={inputCheck} placeholder='パスワード(確認)'></input>
             </div>
             <br></br>
             <button onClick={clickRegist} className='register-btn'>登録</button>

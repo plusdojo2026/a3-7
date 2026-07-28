@@ -1,10 +1,11 @@
 --アイコン情報
-INSERT INTO icons (icon_name, icon_path) values ('ネコ','/a3/img/cat.png');
-INSERT INTO icons (icon_name, icon_path) values ('恐竜','/a3/img/dinosaur.png');
-INSERT INTO icons (icon_name, icon_path) values ('イルカ','/a3/img/dolphin.png');
-INSERT INTO icons (icon_name, icon_path) values ('イヌ','/a3/img/dog.png');
-INSERT INTO icons (icon_name, icon_path) values ('ゴリラ','/a3/img/gorilla.png');
-INSERT INTO icons (icon_name, icon_path) values ('ウサギ', '/a3/img/rabbit.png');
+INSERT INTO icons (icon_name, icon_path) values ('ユーザ','/img/default.png');
+INSERT INTO icons (icon_name, icon_path) values ('ネコ','/img/cat.png');
+INSERT INTO icons (icon_name, icon_path) values ('恐竜','/img/dinosaur.png');
+INSERT INTO icons (icon_name, icon_path) values ('イルカ','/img/dolphin.png');
+INSERT INTO icons (icon_name, icon_path) values ('イヌ','/img/dog.png');
+INSERT INTO icons (icon_name, icon_path) values ('ゴリラ','/img/gorilla.png');
+INSERT INTO icons (icon_name, icon_path) values ('ウサギ', '/img/rabbit.png');
 
 -- ユーザ情報
 INSERT INTO users (mail_address, password, nickname, icon_id) VALUES

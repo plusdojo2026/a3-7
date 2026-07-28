@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.entity.Icon;
 import com.example.demo.entity.User;
+import com.example.demo.repository.IconsRepository;
 import com.example.demo.repository.UsersRepository;
 
 import jakarta.servlet.http.HttpSession;
@@ -17,6 +19,9 @@ public class LoginController {
 
 	@Autowired
 	private UsersRepository repository;
+	
+	@Autowired
+	private IconsRepository iconsRepository;
 	
 	@PostMapping("/api/login")
 	public ResponseEntity<String> login(@RequestBody User user, HttpSession session) {
@@ -37,7 +42,16 @@ public class LoginController {
 		if(users!=null) {
 			return "unsuccessful";
 		}
+		
+		//デフォルトのユーザアイコンを取得
+		Icon defaultIcon = iconsRepository.findById(1).orElseThrow();
+		
+		//ユーザにデフォルトのアイコンを設定
+		user.setIcon(defaultIcon);
+		
 		repository.save(user);
 		return "success";
 	}
+	
+	
 }

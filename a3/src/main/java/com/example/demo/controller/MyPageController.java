@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -48,6 +49,14 @@ public class MyPageController {
 		
 		
 		usersRepository.save(oldUser);
+	}
+	
+	@GetMapping("/api/mypage")
+	public User getMypage(HttpSession session) {
+		
+		Integer id = (Integer) session.getAttribute("loginUserId");
+		
+		return usersRepository.findById(id).orElseThrow();
 	}
 	
 }

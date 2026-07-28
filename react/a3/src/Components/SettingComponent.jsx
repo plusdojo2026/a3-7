@@ -14,12 +14,12 @@ const Setting = () => {
     const [icon, setIcon] = useState("");
 
     const icons = [
-        { id: 1,image: cat },
-        { id: 2,image: dog },
-        { id: 3,image: rabbit },
-        { id: 4,image: gorilla },
-        { id: 5,image: dolphin },
-        { id: 6, image: dinosaur }
+        { id: 2,image: cat },
+        { id: 5,image: dog },
+        { id: 7,image: rabbit },
+        { id: 6,image: gorilla },
+        { id: 4,image: dolphin },
+        { id: 3, image: dinosaur }
     ];
 
     const handleComplete = async () => {
@@ -43,6 +43,9 @@ const Setting = () => {
             await axios.post('/api/mypage', data);
 
         alert("登録しました！");
+
+        //アイコンを変更させるために画面を更新
+        window.location.reload();
 
         } catch(error) {
             console.error(error);
