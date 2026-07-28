@@ -22,7 +22,7 @@ let PlantComponent = () => {
             let count = json;
             console.log(count);
             //テスト用
-            count = 28;
+            //count = 28;
             if(count>=28){
                 setPlant(plant7);
             }
