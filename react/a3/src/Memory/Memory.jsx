@@ -60,27 +60,7 @@ function Memory() {
 
         <div className="memory">
 
-            {/* ===== ヘッダー ===== */}
-            <header className="header">
-
-                <div className="header-title">
-
-                    <img
-                        src={leaf}
-                        alt="葉っぱ"
-                        className="header-logo"
-                    />
-
-                    <span>きょうのいっぽ</span>
-
-                </div>
-
-                <FaSignOutAlt
-                    className="logout-icon"
-                    onClick={logout}
-                />
-
-            </header>
+            
 
             <h2 className="title">
                 日々の記録
