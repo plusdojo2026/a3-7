@@ -49,6 +49,9 @@ public class ProgressController {
 					update.setProgress(record.getProgress());
 				}
 			}
+			else if(record.getProgress().isEmpty()) {
+					update.setProgress(progress);
+				}
 			else {
 				update.setProgress(progress + "," + record.getProgress());
 			}
@@ -60,6 +63,9 @@ public class ProgressController {
 				else {
 					update.setFeel(record.getFeel());
 				}
+			}
+			else if(record.getFeel().isEmpty()) {
+				update.setFeel(feel);
 			}
 			else {
 				update.setFeel(feel + "," + record.getFeel());
@@ -73,6 +79,9 @@ public class ProgressController {
 					update.setFound(record.getFound());
 				}
 				update.setFound(record.getFound());
+			}
+			else if(record.getFound().isEmpty()) {
+				update.setFound(found);
 			}
 			else {
 				update.setFound(found + "," + record.getFound());
