@@ -106,7 +106,12 @@ public class HomeController {
 			// 更新
 			Record update = oldRecord.get(0);
 			String mission = update.getMission();
-			update.setMission(mission + ", "+ record.getMission());
+			if(mission == null) {
+				update.setMission(record.getMission());
+			}
+			else {
+				update.setMission(mission + ", "+ record.getMission());
+			}
 			recordRepository.save(update);
 				
 		} 

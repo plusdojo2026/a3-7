@@ -41,9 +41,42 @@ public class ProgressController {
 			String feel = update.getFeel();
 			String found = update.getFound();
 			
-			update.setProgress(progress + "," + record.getProgress());
-			update.setFeel(feel + "," + record.getFeel());
-			update.setFound(found + "," + record.getFound());
+			if(progress == null || progress.isEmpty()) {
+				if(record.getProgress().isEmpty()) {
+					update.setProgress(null);
+				}
+				else {
+					update.setProgress(record.getProgress());
+				}
+			}
+			else {
+				update.setProgress(progress + "," + record.getProgress());
+			}
+			
+			if(feel == null || feel.isEmpty()) {
+				if(record.getFeel().isEmpty()) {
+					update.setFeel(null);
+				}
+				else {
+					update.setFeel(record.getFeel());
+				}
+			}
+			else {
+				update.setFeel(feel + "," + record.getFeel());
+			}
+			
+			if(found == null || found.isEmpty()) {
+				if(record.getFound().isEmpty()) {
+					update.setFound(null);
+				}
+				else {
+					update.setFound(record.getFound());
+				}
+				update.setFound(record.getFound());
+			}
+			else {
+				update.setFound(found + "," + record.getFound());
+			}
 			
 			recordsRepository.save(update);
 		}
