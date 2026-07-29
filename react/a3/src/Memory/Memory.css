@@ -1,0 +1,72 @@
+@charset "UTF-8";
+
+/*背景色*/
+body {
+    background-color: #fffaf0;
+}
+.header-logo {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    margin-right: 6px;
+}
+
+/* ===== カレンダー ===== */
+
+.calendar-area {
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+}
+
+.calendar-area .react-calendar {
+    width: 100%;
+    max-width: 380px;
+    background: #fff;
+    border: solid 1px rgb(191, 191, 191);
+    border-radius: 20px;
+    box-shadow: 2px 2px 3px rgb(153, 153, 153);
+    padding: 15px;
+    font-size: 20px;
+}
+
+/* 年月 */
+.calendar-area .react-calendar__navigation button {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* 曜日 */
+.calendar-area .react-calendar__month-view__weekdays {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* 日付 */
+.calendar-area .react-calendar__tile {
+    height: 60px;
+    font-size: 18px;
+    border-radius: 10px;
+}
+
+/* 今日 */
+.calendar-area .react-calendar__tile--now {
+    background: #d9f2d0;
+    border-radius: 10px;
+}
+
+/* 選択した日 */
+.calendar-area .react-calendar__tile--active {
+    background: #7C9B56 !important;
+    color: white;
+}
+
+/* 土日 */
+.calendar-area .react-calendar__month-view__days__day--weekend {
+    color: #d9534f;
+}
+
+/* ← この一番下に追加 */
+.react-calendar {
+    border: 5px solid red !important;
+}
