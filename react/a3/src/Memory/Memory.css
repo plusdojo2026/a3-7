@@ -10,7 +10,9 @@ body {
     object-fit: contain;
     margin-right: 6px;
 }
-
+.title {
+    margin-top: 5px;
+}
 /* ===== カレンダー ===== */
 
 .calendar-area {
@@ -68,5 +70,5 @@ body {
 
 /* ← この一番下に追加 */
 .react-calendar {
-    border: 5px solid red !important;
+    border: 5px solid #7C9B56 !important;
 }
